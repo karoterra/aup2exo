@@ -3,6 +3,17 @@
 [AviUtl](http://spring-fragrance.mints.ne.jp/aviutl/)
 プロジェクトファイルから拡張編集のオブジェクトファイル (*.exo) を出力するコンソールアプリです。
 
+## インストール
+
+[Releases](https://github.com/karoterra/aup2exo/releases)
+から最新版の ZIP ファイルをダウンロードし、好きな場所に展開してください。
+
+.NET 6 ランタイムをインストール済みの方は `aup2exo-xxx-win-x64-fd.zip` をダウンロードしてください。
+.NET 6 ランタイムをインストールせずに利用する場合やよく分からない方は `aup2exo-xxx-win-x64-sc.zip`
+をダウンロードしてください。
+
+アンインストール時には展開したフォルダを削除してください。
+
 ## 使い方
 
 ### コンソールを開かない場合
@@ -13,7 +24,7 @@ AviUtl プロジェクトファイル (*.aup) を `aup2exo.exe` にドラッグ&
 ### コンソールから使う場合
 
 ```
-aup2exo 0.0.0
+aup2exo 0.1.0
 Copyright © 2021 karoterra
 
   -o, --out            出力するexoファイルのパス
@@ -50,6 +61,10 @@ Copyright © 2021 karoterra
 サンプルとして [PSDToolKit](https://github.com/oov/aviutl_psdtoolkit)
 に同梱されている `チャンネルストリップ` と `Aux1 チャンネルストリップ`
 についてあらかじめ記載してあるので、必要に応じて各自で追記してください。
+
+## 更新履歴
+
+更新履歴は [CHANGELOG](CHANGELOG.md) を参照してください。
 
 ## ライセンス
 このソフトウェアは MIT ライセンスのもとで公開されます。
