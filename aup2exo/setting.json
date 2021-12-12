@@ -1,0 +1,33 @@
+﻿[
+  {
+    "name": "チャンネルストリップ",
+    "trackbars": [
+      "ID",
+      "入力音量",
+      "遅延",
+      "EQ LoFreq",
+      "EQ LoGain",
+      "EQ HiFreq",
+      "EQ HiGain",
+      "C Thresh",
+      "C Ratio",
+      "C Attack",
+      "C Release",
+      "Aux1Send",
+      "Aux1SPan",
+      "出力音量",
+      "左右"
+    ],
+    "checkboxes": []
+  },
+  {
+    "name": "Aux1 チャンネルストリップ",
+    "trackbars": [
+      "R PreDly",
+      "R Decay",
+      "R LPFreq",
+      "R HPFreq"
+    ],
+    "checkboxes": []
+  }
+]

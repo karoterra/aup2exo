@@ -108,8 +108,41 @@ class Program
         return true;
     }
 
+    static void ApplyFilterDescription(ExEditProject exedit, List<FilterDescription> filters)
+    {
+        int builtinNum = EffectType.Defaults.Length;
+
+        var effectTypes = exedit.EffectTypes.Skip(builtinNum);
+        foreach (FilterDescription filter in filters)
+        {
+            if (string.IsNullOrEmpty(filter.Name)) continue;
+
+            var effect = effectTypes.Where(e => e.Name == filter.Name).FirstOrDefault();
+            if (effect == null) continue;
+
+            for (int i = 0; i < filter.Trackbars.Count && i < effect.Trackbars.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(filter.Trackbars[i]))
+                    effect.Trackbars[i] = new TrackbarDefinition(filter.Trackbars[i], 1, 0, 256, 0);
+            }
+            for (int i = 0; i < filter.Checkboxes.Count && i < effect.Checkboxes.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(filter.Checkboxes[i]))
+                    effect.Checkboxes[i] = new CheckboxDefinition(filter.Checkboxes[i], true, 0);
+            }
+        }
+    }
+
     static int Run(Options opt)
     {
+        if (opt.OutputPath == opt.Filename)
+        {
+            Console.Error.WriteLine("入力ファイルと出力ファイルのパスが同じです。");
+            return 1;
+        }
+
+        Setting setting = new();
+
         var aup = ReadAup(opt.Filename);
         if (aup == null) return 1;
 
@@ -121,11 +154,7 @@ class Program
         }
         ExEditProject exedit = new(filter as RawFilterProject);
 
-        if (opt.OutputPath == opt.Filename)
-        {
-            Console.Error.WriteLine("入力ファイルと出力ファイルのパスが同じです。");
-            return 1;
-        }
+        ApplyFilterDescription(exedit, setting.Filters);
 
         if (opt.Scene.HasValue)
         {

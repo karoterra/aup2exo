@@ -18,4 +18,10 @@
     <ProjectReference Include="..\AupDotNet\src\AupDotNet\AupDotNet.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="setting.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
