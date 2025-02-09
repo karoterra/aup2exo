@@ -8,8 +8,8 @@
 [Releases](https://github.com/karoterra/aup2exo/releases)
 から最新版の ZIP ファイルをダウンロードし、好きな場所に展開してください。
 
-.NET 6 ランタイムをインストール済みの方は `aup2exo-<バージョン>-win-x64-fd.zip` をダウンロードしてください。
-.NET 6 ランタイムをインストールせずに利用する場合やよく分からない方は `aup2exo-<バージョン>-win-x64-sc.zip`
+.NET 8 ランタイムをインストール済みの方は `aup2exo-<バージョン>-win-x64-fd.zip` をダウンロードしてください。
+.NET 8 ランタイムをインストールせずに利用する場合やよく分からない方は `aup2exo-<バージョン>-win-x64-sc.zip`
 をダウンロードしてください。
 
 アンインストール時には展開したフォルダを削除してください。
@@ -24,7 +24,7 @@ AviUtl プロジェクトファイル (*.aup) を `aup2exo.exe` にドラッグ&
 ### コンソールから使う場合
 
 ```
-aup2exo 0.1.1
+aup2exo 0.2.0
 Copyright © 2021 karoterra
 USAGE:
 全てのシーンを出力:
